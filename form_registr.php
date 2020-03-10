@@ -14,15 +14,15 @@ require_once("header.php");
 
 			<div class="form-group">
 				<label for="inputFName">Имя</label>
-				<input type="email" class="form-control" id="inputFName" aria-describedby="emailHelp">
+				<input type="text" class="form-control" id="inputFName" aria-describedby="emailHelp">
 			</div>
 			<div class="form-group">
 				<label for="inputSName">Фамилия</label>
-				<input type="email" class="form-control" id="inputSName" aria-describedby="emailHelp">
+				<input type="text" class="form-control" id="inputSName" aria-describedby="emailHelp">
 			</div>
 			<div class="form-group">
 				<label for="inputMName">Отчество</label>
-				<input type="email" class="form-control" id="inputMName" aria-describedby="emailHelp">
+				<input type="text" class="form-control" id="inputMName" aria-describedby="emailHelp">
 			</div>
 
 			<div class="form-group">
@@ -37,7 +37,7 @@ require_once("header.php");
 				<label for="inputRegPw2">Подтверждение пароля</label>
 				<input type="password" class="form-control" id="inputRegPw2">
 			</div>
-			<button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 15px;">Регистрация</button>
+			<button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 15px;">Зарегистрироваться</button>
 		</form>
 	</div>
 </div>
