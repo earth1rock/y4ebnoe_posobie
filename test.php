@@ -89,7 +89,7 @@ require_once("header.php");
         <style>
         span.quest {font-weight: bold;}
         h2.title_test {background-color: blue; color: white; text-align: center; border-radius: 5px 5px 0 0;}
-        label.radiobt {min-width: 600px; max-width: 600px; text-align: left;}
+        label.radiobt {min-width: 200px; max-width: 600px; text-align: left;}
         </style>
         
         <h2 class="title_test"><script>document.write(title)</script></h2>
