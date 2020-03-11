@@ -20,7 +20,7 @@ session_start();
 		<div class="header">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-				<a class="navbar-brand" href="/index.php">ПОСОБИЕ</a>
+				<a class="navbar-brand" href="index.php">ПОСОБИЕ</a>
 				<!--кнопка, которая появляется при сжатии окна-->
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@ session_start();
 					<div>
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="/index.php">Главная<span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="index.php">Главная<span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">Личный кабинет</a>
@@ -51,7 +51,7 @@ session_start();
 								<a class="nav-link" data-toggle="modal" data-target="#exampleModal"  href="#">Авторизация<span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/form_registr.php">Регистрация</a>
+								<a class="nav-link" href="form_registr.php">Регистрация</a>
 							</li>
 						</ul>
 					</div>
