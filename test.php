@@ -90,9 +90,11 @@ require_once("header.php");
         <style>
         span.quest {font-weight: bold;}
         h2.title_test {background-color: blue; color: white; text-align: center; border-radius: 5px 5px 0 0;}
-        label.radiobt {text-align: left;}
+        label {}
+        label.radiobt {text-align: left; border: 1px solid silver;}
+        .back {background-color: white;}
         </style>
-        
+        <div class="back">
         <h2 class="title_test"><script>document.write(title)</script></h2>
         <form name="quiz">
         <ol>
@@ -103,7 +105,7 @@ require_once("header.php");
         
            document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
            for(var i in question.answers) {
-            document.writeln('<label class="btn btn-light radiobt col-lg-12"><input type=radio name="option' + idx + '" value="' + i +
+            document.writeln('<label class="btn btn-light radiobt col-lg-11"><input type=radio name="option' + idx + '" value="' + i +
             '" onClick="Engine(' + q + ', this.value)">' + question.answers[i] + '</label><br/>');
         }
         }
@@ -111,6 +113,7 @@ require_once("header.php");
         </ol>
         <input type="button" class="btn btn-primary butcheck" onClick="Score()" value="Получить результат" />
         </form>
+    </div>
         </div>
     </div>
     </div>
