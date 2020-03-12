@@ -10,34 +10,37 @@ require_once("header.php");
 		<div>
 			<h1>Регистрация</h1>
 		</div>
-		<form>
+		<form method="POST" name="form_registr" action="register.php">
 
 			<div class="form-group">
-				<label for="inputFName">Имя</label>
-				<input type="text" class="form-control" id="inputFName" aria-describedby="emailHelp">
+				<label for="inputFName">Имя*</label>
+				<input type="text" class="form-control" name="first_name" id="inputFName" required="required">
 			</div>
 			<div class="form-group">
-				<label for="inputSName">Фамилия</label>
-				<input type="text" class="form-control" id="inputSName" aria-describedby="emailHelp">
+				<label for="inputSName">Фамилия*</label>
+				<input type="text" class="form-control" name="last_name" id="inputSName" required="required">
 			</div>
 			<div class="form-group">
 				<label for="inputMName">Отчество</label>
-				<input type="text" class="form-control" id="inputMName" aria-describedby="emailHelp">
+				<input type="text" class="form-control" name="middle_name" id="inputMName">
 			</div>
 
 			<div class="form-group">
-				<label for="exampleInputEmail1">Email</label>
-				<input type="email" class="form-control" id="inputRegEmail" aria-describedby="emailHelp">
+				<label for="exampleInputEmail1">Email*</label>
+				<input type="email" name="email" class="form-control" id="inputRegEmail" required="required">
+				<span id="valid_email_message" class="msg_error"></span>
 			</div>
 			<div class="form-group">
-				<label for="inputRegPw">Пароль</label>
-				<input type="password" class="form-control" id="inputRegPw">
+				<label for="inputRegPw">Пароль*</label>
+				<input type="password" name="password" class="form-control" id="inputRegPw" required="required">
+				<span id="valid_password_message" class="msg_error"></span>
 			</div>
 			<div class="form-group">
-				<label for="inputRegPw2">Подтверждение пароля</label>
-				<input type="password" class="form-control" id="inputRegPw2">
+				<label for="inputRegPw2">Подтверждение пароля*</label>
+				<input type="password" name="password2" class="form-control" id="inputRegPw2" required="required">
+				<span id="checkPw" class="msg_error"></span>
 			</div>
-			<button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 15px;">Зарегистрироваться</button>
+			<input type="submit" class="btn btn-primary btn-block" name="btn_submit_register" style="margin-bottom: 15px;">
 		</form>
 	</div>
 </div>

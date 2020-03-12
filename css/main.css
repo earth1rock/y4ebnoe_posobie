@@ -48,3 +48,7 @@ body {
 	background-color: blue;
 	color: white;
 }
+.msg_error {
+	color: red;
+
+}
