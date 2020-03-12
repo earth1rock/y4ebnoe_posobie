@@ -6,9 +6,11 @@ require_once("header.php");
     <div class="d-flex justify-content-center">
 			<h1>Тестирование</h1>
 			<br>
-	</div>
+    </div>
     <div class="aut">
-        <div class="col-lg-6">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-3">
             <div class="list_tests" >
                 <h3>Список тестов</h3>
             </div>
@@ -20,8 +22,7 @@ require_once("header.php");
                 <li class="list-group-item"><a href="#">Тест №5</a></li><br>
               </ul>
         </div>
-        </div>
-    <div class="col-lg-6">
+    <div class="col-lg-5">
         <script type="text/javascript">
         // Заголовок страницы (h1)
         var title = 'Пример теста';
@@ -89,7 +90,7 @@ require_once("header.php");
         <style>
         span.quest {font-weight: bold;}
         h2.title_test {background-color: blue; color: white; text-align: center; border-radius: 5px 5px 0 0;}
-        label.radiobt {min-width: 200px; max-width: 600px; text-align: left;}
+        label.radiobt {text-align: left;}
         </style>
         
         <h2 class="title_test"><script>document.write(title)</script></h2>
@@ -102,7 +103,7 @@ require_once("header.php");
         
            document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
            for(var i in question.answers) {
-            document.writeln('<label class="btn btn-light radiobt"><input type=radio name="option' + idx + '" value="' + i +
+            document.writeln('<label class="btn btn-light radiobt col-lg-12"><input type=radio name="option' + idx + '" value="' + i +
             '" onClick="Engine(' + q + ', this.value)">' + question.answers[i] + '</label><br/>');
         }
         }
@@ -110,7 +111,10 @@ require_once("header.php");
         </ol>
         <input type="button" class="btn btn-primary butcheck" onClick="Score()" value="Получить результат" />
         </form>
+        </div>
     </div>
+    </div>
+</div>
 </div>
 <?php
     //Подключение подвала
