@@ -136,14 +136,42 @@ session_start();
     					</div>
     					<div class="ml-auto">
     						<ul class="navbar-nav mr-auto">
+
+    							<?php
+   								//Проверяем, если пользователь не авторизован, то выводим форму авторизации, 
+    							//иначе выводим сообщение о том, что он уже авторизован
+    							if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]))
+    							{
+								?>
     							<li class="nav-item">
     								<a class="nav-link" data-toggle="modal" data-target="#exampleModal"  href="#">Авторизация<span class="sr-only">(current)</span></a>
     							</li>
+
+    							
+
     							<li class="nav-item">
     								<a class="nav-link" href="/form_registr.php">Регистрация</a>
     							</li>
+    							<?php 
+    							}
+    							else
+    							{
+    							?>
+    							<li class="nav-item">
+    								<a class="nav-link" href="/logout.php">Выход</a>
+    							</li>
+    							<?php
+    							}
+    							?>
     						</ul>
     					</div>
+
+    					<?php
+   								//Проверяем, если пользователь не авторизован, то выводим форму авторизации, 
+    							//иначе выводим сообщение о том, что он уже авторизован
+    							if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]))
+    							{
+								?>
 
     					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" a-hidden="true">
     						<div class="modal-dialog modal-dialog-centered" role="document">
@@ -154,27 +182,31 @@ session_start();
     										<span aria-hidden="true">&times;</span>
     									</button>
     								</div>
-    								<form method="GET" action="index.php">
+    								<form method="POST" action="auth.php">
     									<div class="modal-body">
 
     										<div class="form-group">
     											<label for="exampleInputEmail1">E-mail</label>
-    											<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    											<input type="email" name="authemail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     										</div>
     										<div class="form-group">
     											<label for="exampleInputPassword1">Password</label>
-    											<input type="password" class="form-control" id="exampleInputPassword1">
+    											<input type="password" name="authpassword" class="form-control" id="exampleInputPassword1">
     										</div>
 
     									</div>
     									<div class="modal-footer">
     										<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-    										<button type="button submit" class="btn btn-primary">Авторизоваться</button>
-    									</div>
+    										
+    										<button type="submit" class="btn btn-primary" name="btn_submit_auth" value="btn_submit_auth">Авторизоваться</button>
+    									
     								</form>
     							</div>
     						</div>
     					</div>
+    					<?php 
+    							}
+    							?>
 
     				</div>
     			</nav>
