@@ -62,7 +62,7 @@ require_once("header.php");
 
 					<div class="">
 
-						<a class="ychast btn btn-block" href="#">
+						<a class="ychast btn btn-block" href="test.php">
 							<p>
 								ПРИНЯТЬ УЧАСТИЕ В ТЕСТИРОВАНИИ
 							</p>

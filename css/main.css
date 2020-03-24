@@ -52,3 +52,14 @@ body {
 	color: red;
 
 }
+.list_tests {
+	background-color: blue;
+	text-indent: 10px;
+	color: white;
+	border-radius: 5px 5px 0 0;
+}
+
+.butcheck {
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
