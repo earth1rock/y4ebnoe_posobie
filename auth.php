@@ -167,9 +167,9 @@ $_SESSION["success_messages"] = '';
                             $_SESSION['email'] = $email;
                             $_SESSION['password'] = $password;
 
-                        //Возвращаем пользователя на главную страницу
+                            // Возвращаем пользователя на ту страницу, на которой он авторизовался
                             header("HTTP/1.1 301 Moved Permanently");
-                            header("Location: ".$address_site."/index.php");
+                            header("Location: ".$_SERVER["HTTP_REFERER"]);
                         }
 
                         else 
