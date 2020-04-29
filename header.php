@@ -138,7 +138,7 @@ session_start();
     						<ul class="navbar-nav mr-auto">
 
     							<?php
-   								//Проверяем, если пользователь не авторизован, то выводим форму авторизации, 
+   								//Проверяем, если пользователь не авторизован, то выводим форму авторизации,
     							//иначе выводим сообщение о том, что он уже авторизован
     							if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]))
     							{
@@ -147,12 +147,12 @@ session_start();
     								<a class="nav-link" data-toggle="modal" data-target="#exampleModal"  href="#">Авторизация<span class="sr-only">(current)</span></a>
     							</li>
 
-    							
+
 
     							<li class="nav-item">
     								<a class="nav-link" href="/form_registr.php">Регистрация</a>
     							</li>
-    							<?php 
+    							<?php
     							}
     							else
     							{
@@ -167,7 +167,7 @@ session_start();
     					</div>
 
     					<?php
-   								//Проверяем, если пользователь не авторизован, то выводим форму авторизации, 
+   								//Проверяем, если пользователь не авторизован, то выводим форму авторизации,
     							//иначе выводим сообщение о том, что он уже авторизован
     							if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]))
     							{
@@ -197,17 +197,18 @@ session_start();
     									</div>
     									<div class="modal-footer">
     										<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-    										
+
     										<button type="submit" class="btn btn-primary" name="btn_submit_auth" value="btn_submit_auth">Авторизоваться</button>
-    									
+
     								</form>
     							</div>
     						</div>
     					</div>
-    					<?php 
+    					<?php
     							}
     							?>
 
     				</div>
     			</nav>
     		</div>
+
