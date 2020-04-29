@@ -64,3 +64,10 @@ body {
 	margin-bottom: 10px;
 	margin-left: 20px;
 }
+
+.profile {
+	width: 900px;
+}
+.lk_list {
+	list-style: none;
+}
