@@ -24,23 +24,22 @@ if($result_query_select)
                     }
 
 ?>
-
-<div class="content">
-	<?php
+<?php
 	//если пользователь не авторизован, то перенаправляем на страницу авторизации
 		if(!isset($_SESSION["email"]) && !isset($_SESSION["password"]))
 		{
 	?>
-			<p>Ti ne zawel v li4nii kabinet!</p>
+<div class="content row align-items-center">
 
+		<div class="col mesage_error block_for_messages"><p>Вы не авторизованы!</p> </div>
 	<?php
 		}
 	//если авторизован, то выводим данные о пользователе
 		else {
 	?>
-
+	<div class="content">
 	<div class="d-flex justify-content-center">
-		<div >
+		<div>
 			<h1>Личный кабинет</h1>
 			<br>
 			<br>
@@ -49,7 +48,9 @@ if($result_query_select)
 
 	<div class="profile">
 
-	<ul class="lk_list">
+
+	<ul class="lk_list ">
+		<li class="text-center"><div class="avatar rounded-circle bg-primary "><p style="padding-top: 10px"><?php echo substr($first_name, 0, 2); ?></p></div></li>
     	<li>Фамилия: <?php echo $last_name; ?> </li>
     	<li>Имя: <?php echo $first_name; ?></li>
     	<li>Отчество: <?php echo $middle_name; ?></li>

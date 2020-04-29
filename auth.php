@@ -32,12 +32,12 @@ $_SESSION["success_messages"] = '';
                     //Если формат полученного почтового адреса не соответствует регулярному выражению
                 if( !preg_match($reg_email, $email))
                 {
-                        // Сохраняем в сессию сообщение об ошибке. 
+                        // Сохраняем в сессию сообщение об ошибке.
                     $_SESSION["error_messages"] .= "<p class='mesage_error' >Вы ввели неправильный email</p>";
 
                         //Возвращаем пользователя на страницу авторизации
                     header("HTTP/1.1 301 Moved Permanently");
-                    header("Location: ".$address_site."/index.php");
+                    header("Location: ".$address_site."/form_auth.php");
 
                         //Останавливаем скрипт
                     exit();
@@ -47,7 +47,7 @@ $_SESSION["success_messages"] = '';
 
                 if(!$result_query_select)
                 {
-                    // Сохраняем в сессию сообщение об ошибке. 
+                    // Сохраняем в сессию сообщение об ошибке.
                     $_SESSION["error_messages"] .= "<p class='mesage_error' >Ошибка запроса на выборке пользователя из БД</p>";
 
                     //Возвращаем пользователя на страницу регистрации
@@ -72,18 +72,18 @@ $_SESSION["success_messages"] = '';
 
                     }
 
-                    else 
+                    else
                         {
-                               // Сохраняем в сессию сообщение об ошибке. 
+                               // Сохраняем в сессию сообщение об ошибке.
                             $_SESSION["error_messages"] .= "<p class='mesage_error' >Неправильный логин/пароль!</p>";
 
                             //Возвращаем пользователя на страницу регистрации
                             header("HTTP/1.1 301 Moved Permanently");
-                            header("Location: ".$address_site."/index.php");
+                            header("Location: ".$address_site."/form_auth.php");
 
                             //Останавливаем скрипт
                             exit();
-                        }    
+                        }
 
                 }
                 $result_query_select->close();
@@ -93,12 +93,12 @@ $_SESSION["success_messages"] = '';
 
             else
             {
-                    // Сохраняем в сессию сообщение об ошибке. 
-                $_SESSION["error_messages"] .= "<p class='mesage_error' >Поле для ввода почтового адреса(email) не должна быть пустой.</p>";
+                    // Сохраняем в сессию сообщение об ошибке.
+                $_SESSION["error_messages"] .= "<p class='mesage_error' >Заполните данные для авторизации!.</p>";
 
                     //Возвращаем пользователя на страницу регистрации
                 header("HTTP/1.1 301 Moved Permanently");
-                header("Location: ".$address_site."/form_registr.php");
+                header("Location: ".$address_site."/form_auth.php");
 
                     //Останавливаем скрипт
                 exit();
@@ -108,7 +108,7 @@ $_SESSION["success_messages"] = '';
 
         else
         {
-                // Сохраняем в сессию сообщение об ошибке. 
+                // Сохраняем в сессию сообщение об ошибке.
             $_SESSION["error_messages"] .= "<p class='mesage_error' >Отсутствует поле для ввода Email</p>";
 
                 //Возвращаем пользователя на страницу авторизации
@@ -118,7 +118,7 @@ $_SESSION["success_messages"] = '';
                 //Останавливаем скрипт
             exit();
         }
-        
+
 
             //(3) Место для обработки пароля
         if(isset($_POST["authpassword"]))
@@ -137,7 +137,7 @@ $_SESSION["success_messages"] = '';
 
                 if(!$result_query_select)
                 {
-                    // Сохраняем в сессию сообщение об ошибке. 
+                    // Сохраняем в сессию сообщение об ошибке.
                     $_SESSION["error_messages"] .= "<p class='mesage_error' >Ошибка запроса на выборке пользователя из БД</p>";
 
                     //Возвращаем пользователя на страницу регистрации
@@ -169,17 +169,17 @@ $_SESSION["success_messages"] = '';
 
                         //Возвращаем пользователя на главную страницу
                             header("HTTP/1.1 301 Moved Permanently");
-                            header("Location: ".$address_site."/index.php");
+                            header("Location: ".$address_site."/lk.php");
                         }
 
-                        else 
+                        else
                         {
-                               // Сохраняем в сессию сообщение об ошибке. 
+                               // Сохраняем в сессию сообщение об ошибке.
                             $_SESSION["error_messages"] .= "<p class='mesage_error' >Неправильный логин/пароль!</p>";
 
                             //Возвращаем пользователя на страницу регистрации
                             header("HTTP/1.1 301 Moved Permanently");
-                            header("Location: ".$address_site."/index.php");
+                            header("Location: ".$address_site."/form_auth.php");
 
                             //Останавливаем скрипт
                             exit();
@@ -194,7 +194,7 @@ $_SESSION["success_messages"] = '';
 
             else
             {
-                    // Сохраняем в сессию сообщение об ошибке. 
+                    // Сохраняем в сессию сообщение об ошибке.
                 $_SESSION["error_messages"] .= "<p class='mesage_error' >Укажите Ваш пароль</p>";
 
                     //Возвращаем пользователя на страницу регистрации
@@ -208,7 +208,7 @@ $_SESSION["success_messages"] = '';
         }
         else
         {
-                // Сохраняем в сессию сообщение об ошибке. 
+                // Сохраняем в сессию сообщение об ошибке.
             $_SESSION["error_messages"] .= "<p class='mesage_error' >Отсутствует поле для ввода пароля</p>";
 
                 //Возвращаем пользователя на страницу регистрации
