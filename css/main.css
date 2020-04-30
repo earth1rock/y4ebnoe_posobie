@@ -69,9 +69,6 @@ body {
 	margin-left: 20px;
 }
 
-.profile {
-	width: 900px;
-}
 .lk_list {
 	list-style: none;
 }
@@ -86,6 +83,7 @@ body {
 }
 .block_for_messages {
 	text-align: center;
+	word-wrap: break-word;
 }
 .marg {
 	margin:auto;

@@ -46,9 +46,7 @@ if($result_query_select)
 		</div>
 	</div>
 
-	<div class="profile">
-
-
+	<div>
 	<ul class="lk_list ">
 		<li class="text-center"><div class="avatar rounded-circle bg-primary "><p style="padding-top: 10px"><?php echo substr($first_name, 0, 2); ?></p></div></li>
     	<li>Фамилия: <?php echo $last_name; ?> </li>
@@ -56,15 +54,11 @@ if($result_query_select)
     	<li>Отчество: <?php echo $middle_name; ?></li>
     	<li>Должность: <?php echo $role; ?></li>
     </ul>
-
-
 	</div>
 
 	<?php
 		}
 	?>
-
-
 
 </div>
 
