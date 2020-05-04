@@ -1,4 +1,7 @@
 <?php
+//Добавляем файл подключения к БД
+require_once("dbconnect.php");
+
     //Подключение шапки
 require_once("header.php");
 ?>
@@ -15,47 +18,88 @@ require_once("header.php");
                 <h3>Список тестов</h3>
             </div>
             <ul class="list-group">
-                <li class="list-group-item"><a href="#">Тест №1</a></li>
-                <li class="list-group-item"><a href="#">Тест №2</a></li>
-                <li class="list-group-item"><a href="#">Тест №3</a></li>
-                <li class="list-group-item"><a href="#">Тест №4</a></li>
-                <li class="list-group-item"><a href="#">Тест №5</a></li><br>
+
+        <?php
+          $result_query_select = $mysqli->query("SELECT id_test,name FROM `tests`");
+
+                    if($result_query_select)
+                    {
+                        while ($row = $result_query_select->fetch_array())
+                        {
+                            $name = $row['name'];
+                            $id_test = $row['id_test'];
+
+                            echo '<li class="list-group-item"><a href="/test.php?id_test='.$id_test.'">'.$name.'</a></li>';
+                        }
+                    }
+          ?>
+
               </ul>
         </div>
     <div class="col-lg-5">
         <script type="text/javascript">
+
+
         // Заголовок страницы (h1)
-        var title = 'Пример теста';
+
         // Вопросы
         var questions=[
-        {
-            text: "Вопрос №1:",
-            answers: ["Правильный ответ",
-                  "Неправильный ответ",
-                  "Неправильный ответ"],
-            correctAnswer: 0 // нумерация правильных ответов с нуля!
-        },
-        {
-            text: "Вопрос №2:",
-            answers: ["Неправильный ответ",
-                  "Правильный ответ",
-                  "Неправильный ответ"],
-            correctAnswer: 1
-        },
-        {
-            text: "Вопрос №3:",
-            answers: ["Неправильный ответ",
-                  "Неправильный ответ",
-                  "Правильный ответ"],
-            correctAnswer: 2
-        }
+
+
+        <?php
+
+        if (is_null($_GET['id_test'])) {$_GET['id_test']=1;}
+
+        // выборка для заголовка вопросов
+        $result_query_select = $mysqli->query("SELECT text,id_question FROM `questions` where id_test=".$_GET['id_test']."");
+
+                    if($result_query_select)
+                    {
+                        while ($row = $result_query_select->fetch_array())
+                        {
+
+                          $txt = $row['text'];
+                          $id_question = $row['id_question'];
+
+                          //выборка для всех ответов для конкретного вопроса
+                          $result_query_select2 = $mysqli->query("SELECT text FROM `answers` WHERE id_question=".$id_question."");
+
+                             if($result_query_select2)
+                              {
+                                  while ($row2 = $result_query_select2->fetch_array())
+                                    {
+                                      $answer_string = $answer_string.'"'.$row2['text'].'",';
+                                    }
+                              }
+
+                          $answer_string = substr($answer_string,0,-1);
+                           echo '{text: "'.$txt.'", answers: ['.$answer_string.'], correctAnswer: 0// нумерация правильных ответов с нуля!
+                          },';
+                          //очищение буфера строки
+                          unset($answer_string);
+                        }
+                    }
+
+          $result_query_select = $mysqli->query("SELECT name FROM `tests` where id_test=".$_GET['id_test']."");
+
+                    if($result_query_select)
+                    {
+                        while ($row = $result_query_select->fetch_array())
+                        {
+                            $head = $row['name'];
+                        }
+                    }
+
+
+         ?>
         ];
-        
+
+        var title = "<?php echo $head;?>";
         var yourAns = new Array;
         var score = 0;
-        
+
         function Engine(question, answer) {yourAns[question]=answer;}
-        
+
         function Score(){
            var answerText = "Результаты:\n";
            for(var i = 0; i < yourAns.length; ++i){
@@ -70,9 +114,9 @@ require_once("header.php");
                 ++score;
                 }
                }
-        
+
            answerText=answerText+"\nВсего правильных ответов: "+score+"\n";
-        
+
            alert(answerText);
            yourAns = [];
            score = 0;
@@ -86,7 +130,7 @@ require_once("header.php");
         }
         }
         </script>
-        
+
         <style>
         span.quest {font-weight: bold;}
         h2.title_test {background-color: blue; color: white; text-align: center; border-radius: 5px 5px 0 0;}
@@ -102,7 +146,7 @@ require_once("header.php");
         for(var q=0; q<questions.length; ++q) {
            var question = questions[q];
            var idx = 1 + q;
-        
+
            document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
            for(var i in question.answers) {
             document.writeln('<label class="btn btn-light radiobt col-lg-11"><input type=radio name="option' + idx + '" value="' + i +
