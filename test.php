@@ -120,6 +120,6 @@ require_once("header.php");
 </div>
 </div>
 <?php
-    //Подключение подвала
+    //Подключение подвала2
 require_once("footer.php");
 ?>
