@@ -1,5 +1,12 @@
 .content {
 	flex-grow: 1;
+
+}
+/* оболочка для контента  */
+.bord {
+	max-width: 1200px;
+	margin: auto;
+	position: relative;
 }
 
 .inf {
@@ -14,14 +21,11 @@ body {
 .content h1 {
 	color: white;
 }
-
+/* высота страницы */
 .wrapper {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-
-  /*	max-width: 1200px;
-  margin: auto; */
 }
 
 .tabl {
@@ -48,8 +52,10 @@ body {
 	background-color: blue;
 	color: white;
 }
+
 .msg_error {
 	color: red;
+}
 
 }
 .list_tests {
@@ -62,4 +68,24 @@ body {
 .butcheck {
 	margin-bottom: 10px;
 	margin-left: 20px;
+}
+
+.lk_list {
+	list-style: none;
+}
+.avatar {
+	width: 128px;
+	height: 128px;
+	font-size: 64px;
+}
+.mesage_error {
+	font-size: 64px;
+	color: red;
+}
+.block_for_messages {
+	text-align: center;
+	word-wrap: break-word;
+}
+.marg {
+	margin:auto;
 }
