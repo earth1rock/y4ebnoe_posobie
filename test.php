@@ -79,7 +79,7 @@ require_once("header.php");
                           unset($answer_string);
                         }
                     }
-
+                    //заголовок h1
           $result_query_select = $mysqli->query("SELECT name FROM `tests` where id_test=".$_GET['id_test']."");
 
                     if($result_query_select)
@@ -164,6 +164,6 @@ require_once("header.php");
 </div>
 </div>
 <?php
-    //Подключение подвала
+    //Подключение подвала2
 require_once("footer.php");
 ?>
